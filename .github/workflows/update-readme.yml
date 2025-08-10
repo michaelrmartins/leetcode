@@ -25,8 +25,8 @@ jobs:
           echo "showing folders"
           ls
           sed -i "s/Easy: [0-9]*/Easy $EASY/" readme.md
-          sed -i "s/Medium: [0-9]*/Medium $MEDIUM/" readme.md
-          sed -i "s/Hard: [0-9]*/Hard $HARD/" readme.md
+          # sed -i "s/Medium: [0-9]*/Medium $MEDIUM/" readme.md
+          # sed -i "s/Hard: [0-9]*/Hard $HARD/" readme.md
 
       - name: Commit changes
         run: |
