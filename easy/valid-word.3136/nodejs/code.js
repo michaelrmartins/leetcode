@@ -13,8 +13,9 @@
  * - Ensure the word is at least 3 characters long
  */
 
-const myWord = "w3216546a";
-const regex = /^(?=.*[aeiouAEIOU])(?=.*[0-9])(?=.*[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ])[a-zA-Z0-9]+$/;
+const myWord = "aya";
+
+const regex = /^(?=.*[aeiouAEIOU])(?=.*[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ])[a-zA-Z0-9]+$/;
 function isValidword(word){
     if (word.match(regex) && word.length >= 3){
         return true;
