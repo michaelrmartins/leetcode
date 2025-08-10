@@ -11,7 +11,7 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v3
 
-        -name: Count folders
+      - name: Count folders
         run: | 
           EASY=$(ls -1 easy | wc -l)
           MEDIUM=$(ls -1 medium | wc -l)
