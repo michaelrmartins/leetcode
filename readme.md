@@ -32,9 +32,9 @@ Each solution file includes:
 
 | Difficulty | Problems Solved |                       Progress                      |
 |------------|-----------------|-----------------------------------------------------|
-| Easy       | 1               | ![Progress](https://progress-bar.dev/3/?title=done) |
-| Medium     | 0               | ![Progress](https://progress-bar.dev/1/?title=done) |
-| Hard       | 0               | ![Progress](https://progress-bar.dev/0/?title=done) |
+| Easy       | 1               | ![](https://geps.dev/progress/1) |
+| Medium     | 0               | ![](https://geps.dev/progress/0)|
+| Hard       | 0               | ![](https://geps.dev/progress/0)|
 
 ---
 
