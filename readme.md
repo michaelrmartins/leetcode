@@ -33,7 +33,7 @@ Each solution file includes:
 
 | Difficulty | Problems Solved |                       Progress                      |
 |------------|-----------------|-----------------------------------------------------|
-| Easy       | 1               | ![](https://geps.dev/progress/1) |
+| Easy       | 7               | ![](https://geps.dev/progress/1) |
 | Medium     | 0               | ![](https://geps.dev/progress/0)|
 | Hard       | 0               | ![](https://geps.dev/progress/0)|
 
