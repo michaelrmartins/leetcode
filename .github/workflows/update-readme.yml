@@ -1,5 +1,4 @@
 name: Update README progress
-
 on:
   push:
     branches:
@@ -11,28 +10,26 @@ jobs:
       contents: write
     steps:
       - name: checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Count folders
         run: | 
-          EASY=$(ls -1 easy | wc -l)
-          # MEDIUM=$(ls -1 medium | wc -l)
-          # HARD=$(ls -1 hard | wc -l)
-          if [ -f readme.md ]; then
-            echo "OK - readme.md found"
-          else
-            echo "Error - readme.md does not exist"
-          fi
-          echo "Easy: $EASY"
-          echo "Medium: $MEDIUM"
-          echo "Hard: $HARD"
+          # If directories dont exist, set count to 0
+          if [ -d "easy" ]; then EASY=$(ls -1 easy | wc -l); else EASY=0; fi
+          if [ -d "medium" ]; then MEDIUM=$(ls -1 medium | wc -l); else MEDIUM=0; fi
+          if [ -d "hard" ]; then HARD=$(ls -1 hard | wc -l); else HARD=0; fi
+
+          echo "Problems Solved: Easy ($EASY), Medium ($MEDIUM), Hard ($HARD)"          
 
           # Update readme.md
-          echo "showing folders"
-          ls
           sed -i -E "s/(^\| Easy\s*\|\s*)[0-9]+(\s*\|.*$)/\1$EASY\2/" readme.md
-          # sed -i "s/Medium: [0-9]*/Medium $MEDIUM/" readme.md
-          # sed -i "s/Hard: [0-9]*/Hard $HARD/" readme.md
+          sed -i -E "s/(^\| Medium\s*\|\s*)[0-9]+(\s*\|.*$)/\1$MEDIUM\2/" readme.md
+          sed -i -E "s/(^\| Hard\s*\|\s*)[0-9]+(\s*\|.*$)/\1$HARD\2/" readme.md
+
+          # Update progress bar
+          sed -i -E "s#(!\[\]\(https://geps.dev/progress/)[0-9]+(\))#\1$EASY\2#g" readme.md
+          sed -i -E "s#(!\[\]\(https://geps.dev/progress/)[0-9]+(\))#\1$MEDIUM\2#g" readme.md
+          sed -i -E "s#(!\[\]\(https://geps.dev/progress/)[0-9]+(\))#\1$HARD\2#g" readme.md
 
       - name: Commit changes
         run: |
