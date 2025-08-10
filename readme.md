@@ -5,6 +5,7 @@
 ![Last Commit](https://img.shields.io/github/last-commit/michaelrmartins/leetcode?style=flat-square&color=brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
 [![Update README progress](https://github.com/michaelrmartins/leetcode/actions/workflows/update-readme.yml/badge.svg)](https://github.com/michaelrmartins/leetcode/actions/workflows/update-readme.yml)
+
 A curated collection of my **LeetCode** problem solutions, written with clean code, detailed explanations, and different approaches whenever possible.
 
 ---
