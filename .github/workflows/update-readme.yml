@@ -1,0 +1,35 @@
+name: Update README progress
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
+
+        -name: Count folders
+        run: | 
+          EASY=$(ls -1 easy | wc -l)
+          MEDIUM=$(ls -1 medium | wc -l)
+          HARD=$(ls -1 hard | wc -l)
+
+          echo "Easy: $EASY"
+          echo "Medium: $MEDIUM"
+          echo "Hard: $HARD"
+
+          # Update README.md
+          sed -i "s/Easy: [0-9]*/Easy $EASY/" README.md
+          sed -i "s/Medium: [0-9]*/Medium $MEDIUM/" README.md
+          sed -i "s/Hard: [0-9]*/Hard $HARD/" README.md
+
+      - name: Commit changes
+        run: |
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
+          git add README.md
+          git commit -m "Update README with current progress"
+          git push
