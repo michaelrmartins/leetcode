@@ -14,8 +14,8 @@ jobs:
       - name: Count folders
         run: | 
           EASY=$(ls -1 easy | wc -l)
-          MEDIUM=$(ls -1 medium | wc -l)
-          HARD=$(ls -1 hard | wc -l)
+          # MEDIUM=$(ls -1 medium | wc -l)
+          # HARD=$(ls -1 hard | wc -l)
 
           echo "Easy: $EASY"
           echo "Medium: $MEDIUM"
