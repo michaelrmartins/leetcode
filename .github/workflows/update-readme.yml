@@ -16,12 +16,16 @@ jobs:
           EASY=$(ls -1 easy | wc -l)
           # MEDIUM=$(ls -1 medium | wc -l)
           # HARD=$(ls -1 hard | wc -l)
-
+          if [ -f readme.md ]; then
+            echo "OK - readme.md found"
+          else
+            echo "Error - readme.md does not exist"
+          fi
           echo "Easy: $EASY"
           echo "Medium: $MEDIUM"
           echo "Hard: $HARD"
 
-          # Update README.md
+          # Update readme.md
           echo "showing folders"
           ls
           sed -i "s/Easy: [0-9]*/Easy $EASY/" readme.md
