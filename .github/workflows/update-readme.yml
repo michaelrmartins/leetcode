@@ -3,7 +3,7 @@ name: Update README progress
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   update-readme:
     runs-on: ubuntu-latest
