@@ -27,9 +27,9 @@ jobs:
           sed -i -E "s/(^\| Hard\s*\|\s*)[0-9]+(\s*\|.*$)/\1$HARD\2/" readme.md
 
           # Update progress bar
-          sed -i -E "s#(!\[\]\(https://geps.dev/progress/)[0-9]+(\))#\1$EASY\2#g" readme.md
-          sed -i -E "s#(!\[\]\(https://geps.dev/progress/)[0-9]+(\))#\1$MEDIUM\2#g" readme.md
-          sed -i -E "s#(!\[\]\(https://geps.dev/progress/)[0-9]+(\))#\1$HARD\2#g" readme.md
+          sed -i -E "/^\| Easy/s#(https://geps.dev/progress/)[0-9]+#\1$EASY#" readme.md
+          sed -i -E "/^\| Medium/s#(https://geps.dev/progress/)[0-9]+#\1$MEDIUM#" readme.md
+          sed -i -E "/^\| Hard/s#(https://geps.dev/progress/)[0-9]+#\1$HARD#" readme.md
 
       - name: Commit changes
         run: |
